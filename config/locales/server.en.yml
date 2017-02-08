@@ -1,0 +1,5 @@
+en:
+    site_settings:
+        metar_bot_enabled: >
+            Allows users to look up METAR or TAF using the [ METAR CYVR ] macro
+        
