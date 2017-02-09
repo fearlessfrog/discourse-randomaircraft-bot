@@ -121,7 +121,7 @@ after_initialize do
                 if post.user.username.downcase == "Bogusheadbox".downcase
                         post.raw = "@#{post.user.username} has asked for a **Random Aircraft** quiz.\n\n"
                         post.raw += "----\n\n"
-                        post.raw += "#{ URI.encode('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/F-111F_dropping_high-drag_bombs.jpg/1280px-F-111F_dropping_high-drag_bombs.jpg')}\n\n"
+                        post.raw += "<img src='#{ URI.encode('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/F-111F_dropping_high-drag_bombs.jpg/1280px-F-111F_dropping_high-drag_bombs.jpg')}'/>\n\n"
                         post.raw += "----\n\n"
                         post.raw += "<details><summary>Answer below (no peeking!)</summary>What did you expect Mr B?</details>\n\n"
 
@@ -132,9 +132,9 @@ after_initialize do
                     if !img.nil? && !article.nil?
                         post.raw = "@#{post.user.username} has asked for a **Random Aircraft** quiz.\n\n"
                         post.raw += "----\n\n"
-                        post.raw += "#{img}\n\n"
+                        post.raw += "<img src='#{img}'/>\n\n"
                         post.raw += "----\n\n"
-                        post.raw += "<details><summary>Answer below (no peeking!)</summary>[#{article}](https://en.wikipedia.org/wiki/#{article})</details>\n\n"
+                        post.raw += "<details><summary>Answer below (no peeking!)</summary>[#{URI.decode(article)}](https://en.wikipedia.org/wiki/#{article})</details>\n\n"
 
                         # Will cook, hopefully
                         post.save
