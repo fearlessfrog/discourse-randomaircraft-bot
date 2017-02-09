@@ -1,5 +1,5 @@
 en:
     site_settings:
-        metar_bot_enabled: >
-            Allows users to look up METAR or TAF using the [ METAR CYVR ] macro
+        randomaircraft_bot_enabled: >
+            Allows users to get a Random Aircraft quiz with a [ randomaircraft ] macro
         
